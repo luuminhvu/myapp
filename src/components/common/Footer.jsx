@@ -85,7 +85,6 @@ const FooterComponent = () => {
         <div className="w-full md:w-1/6 mb-8 md:mb-0">
           <h2 className="text-lg font-bold mb-4 text-textRgb">Social Media</h2>
           <div className="flex space-x-4">
-            {/* Replace the div with your social media icons */}
             <div className="w-10 h-10 bg-gray-300 rounded-full"></div>
             <div className="w-10 h-10 bg-gray-300 rounded-full"></div>
             <div className="w-10 h-10 bg-gray-300 rounded-full"></div>
@@ -93,7 +92,6 @@ const FooterComponent = () => {
         </div>
       </div>
 
-      {/* Bottom Section - Copyright and Chat Icon */}
       <div className="mt-10 flex justify-between items-center">
         <div className="text-gray-600 text-sm">
           © Datawarehouse™, 2020. All rights reserved.
@@ -101,7 +99,6 @@ const FooterComponent = () => {
           Company Registration Number: 21479524.
         </div>
         <div className="w-12 h-12 bg-purple-300 rounded-full flex justify-center items-center text-white text-lg">
-          {/* Replace this div with your chat icon */}
           💬
         </div>
       </div>

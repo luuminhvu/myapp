@@ -45,8 +45,6 @@ api.interceptors.response.use(
       }
     }
 
-    // Handle other error cases here if needed
-
     return Promise.reject(error);
   }
 );
