@@ -60,9 +60,9 @@ const authSlice = createSlice({
         const user = jwtDecode(token);
         const exp = user.exp;
         const currentTime = Math.floor(Date.now() / 1000);
-        localStorage.removeItem("accessToken");
-        localStorage.removeItem("refreshToken");
         if (exp < currentTime) {
+          localStorage.removeItem("accessToken");
+          localStorage.removeItem("refreshToken");
           return {
             ...state,
             accessToken: null,
