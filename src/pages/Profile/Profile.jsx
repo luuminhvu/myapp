@@ -59,8 +59,8 @@ const Profile = () => {
   };
 
   return (
-    <div className="flex h-auto">
-      <div className="w-[320px] bg-gray-200 p-4">
+    <div className="flex flex-col md:flex-row h-auto">
+      <div className="w-full md:w-[320px] bg-gray-200 p-4">
         <div className="flex justify-center items-center">
           <Logo />
         </div>
@@ -78,29 +78,29 @@ const Profile = () => {
         </ul>
       </div>
 
-      <div className="w-full p-28">
-        <div className="flex justify-between">
+      <div className="w-full p-4 md:p-28">
+        <div className="flex flex-col md:flex-row justify-between">
           <div className="mb-4">
             <button
               onClick={() => {
                 setShowAddModal(true);
               }}
-              className="bg-purple-500 w-[252px] text-white py-2 px-4 rounded-3xl"
+              className="bg-purple-500 w-full md:w-[252px] text-white py-2 px-4 rounded-3xl"
             >
               Add new
             </button>
           </div>
 
-          <div className="flex mb-4">
+          <div className="flex flex-col md:flex-row mb-4">
             <input
               type="text"
               placeholder="Title"
-              className="border border-gray-300 p-2 rounded mr-2 w-[368px]"
+              className="border border-gray-300 p-2 rounded mb-2 md:mb-0 md:mr-2 w-full md:w-[368px]"
               value={title}
               onChange={handleTitleChange}
             />
             <select
-              className="border border-gray-300 p-2 rounded w-[368px]"
+              className="border border-gray-300 p-2 rounded w-full md:w-[368px]"
               value={choosenTag}
               onChange={handleTagChange}
             >
