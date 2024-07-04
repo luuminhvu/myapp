@@ -60,7 +60,7 @@ const Profile = () => {
 
   return (
     <div className="flex h-auto">
-      <div className="w-1/5 bg-gray-200 p-4">
+      <div className="w-[320px] bg-gray-200 p-4">
         <div className="flex justify-center items-center">
           <Logo />
         </div>
@@ -78,7 +78,7 @@ const Profile = () => {
         </ul>
       </div>
 
-      <div className="w-4/5 p-28">
+      <div className="w-full p-28">
         <div className="flex justify-between">
           <div className="mb-4">
             <button
