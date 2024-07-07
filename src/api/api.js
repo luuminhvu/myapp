@@ -1,5 +1,5 @@
 import axios from "axios";
-import { refreshTokenAsync } from "../stores/authSlice";
+import { refreshTokenAsync } from "../services/authService";
 
 const api = axios.create({
   baseURL: "https://api-test-web.agiletech.vn",
@@ -29,11 +29,10 @@ api.interceptors.response.use(
     const originalRequest = error.config;
     if (
       error.response &&
-      error.response.status === 401 &&
+      (error.response.status === 401 || error.response.status === 403) &&
       !originalRequest._retry
     ) {
       originalRequest._retry = true;
-
       try {
         const { accessToken, refreshToken } = await refreshTokenAsync();
         localStorage.setItem("accessToken", accessToken);

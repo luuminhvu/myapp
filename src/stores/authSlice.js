@@ -1,19 +1,11 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { login, logout, refreshToken } from "../services/authService";
+import { login, logout } from "../services/authService";
 import { jwtDecode } from "jwt-decode";
 
 export const loginAsync = createAsyncThunk(
   "auth/login",
   async ({ username }) => {
     const response = await login(username);
-    return response;
-  }
-);
-
-export const refreshTokenAsync = createAsyncThunk(
-  "auth/refreshToken",
-  async () => {
-    const response = await refreshToken();
     return response;
   }
 );
@@ -92,10 +84,7 @@ const authSlice = createSlice({
         state.status = "failed";
         state.error = action.error.message;
       })
-      .addCase(refreshTokenAsync.fulfilled, (state, action) => {
-        state.accessToken = action.payload.accessToken;
-        localStorage.setItem("accessToken", action.payload.accessToken);
-      })
+
       .addCase(logoutAsync.fulfilled, (state, action) => {
         state.accessToken = action.payload.accessToken;
         state.refreshToken = action.payload.refreshToken;

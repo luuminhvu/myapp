@@ -12,11 +12,12 @@ export const login = async (username) => {
 export const logout = async () => {
   return await api.delete("/auth/logout");
 };
-export const refreshToken = async () => {
+export const refreshTokenAsync = async () => {
   try {
     const response = await api.post("/auth/refresh-token", {
       refreshToken: localStorage.getItem("refreshToken"),
     });
+
     return response.data;
   } catch (error) {
     throw error;
